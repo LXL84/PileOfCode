@@ -21,8 +21,16 @@ species  Bream  Pike  Roach  Smelt
 x = [iris.sepal_length[iris.species==sp_name] for sp_name in ['setosa', 'versicolor', 'virginica']]
 plt.hist(x, 8, density=True, histtype='bar', stacked=True)
 #plots histogram with 1 variable, stacked bars using another variable (species)
-
+#used in Titanic:
+x = [df.SibSp[df.Survived==sp_name] for sp_name in [1,0]]
+plt.hist(x,histtype='bar', stacked=True)
+plt.legend(['alive','dead'])
+plt.show()
 
 DataFrame.select_dtypes(include=None, exclude=None)
 #selects the subset of DF that is of dtype.
 for numbers, use include='number'
+
+Manipulation in pandas
+df2['todrop']=['yes' if pd.isnull(x) else 'no' for x in df2['Age']]
+->make a new variable 'todrop' dependent on whether a value in 'Age' is null or not 
