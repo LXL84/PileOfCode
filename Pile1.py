@@ -34,3 +34,6 @@ for numbers, use include='number'
 Manipulation in pandas
 df2['todrop']=['yes' if pd.isnull(x) else 'no' for x in df2['Age']]
 ->make a new variable 'todrop' dependent on whether a value in 'Age' is null or not 
+
+df['Family'] = np.where(np.logical_or(df['SibSp']>0, df['Parch']>0),'yes', 'no')
+create a new variable 'family' with a yes/no depending on sibsp and parch vars.
