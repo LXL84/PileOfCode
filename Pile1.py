@@ -37,3 +37,11 @@ df2['todrop']=['yes' if pd.isnull(x) else 'no' for x in df2['Age']]
 
 df['Family'] = np.where(np.logical_or(df['SibSp']>0, df['Parch']>0),'yes', 'no')
 create a new variable 'family' with a yes/no depending on sibsp and parch vars.
+
+#Check if DF is null in any way - return True if so
+df.isnull().any().any()
+#Check which row have null in specific column
+nan_rows = df[df['name column'].isnull()]
+
+#DF.info(), nulls specific
+df.info(null_counts=True)
